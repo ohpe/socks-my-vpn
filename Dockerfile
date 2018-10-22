@@ -31,15 +31,15 @@ COPY socks.sh /socks/
 
 RUN echo "Configuring the apk"						&&\
 	apk update										&&\
-	apk add --update --no-cache						&&\
+	apk add --update --no-cache	\
 				openvpn bash openresolv curl		&&\
 	rm -rf /tmp/* /var/cache/apk/* 					&&\
 	chmod a+x /socks/server /socks/socks.sh 		&&\
 	echo "Done."
 
 
-HEALTHCHECK --interval=60s --timeout=15s 			&&\
-			--start-period=120s 					&&\
+HEALTHCHECK --interval=60s --timeout=15s 			\
+			--start-period=120s 					\
 			CMD curl -L 'https://ifconfig.co'
 
 VOLUME ["/vpn"]
