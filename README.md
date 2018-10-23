@@ -20,7 +20,7 @@ docker run \
     -p 1080:1080 \
     --volume "~/path/to/vpn-folder/:/vpn/:ro" \
     --sysctl net.ipv6.conf.all.disable_ipv6=0 \
-    socks-my-vpn:latest
+    ohpe/socks-my-vpn:latest
 ```
 
 
